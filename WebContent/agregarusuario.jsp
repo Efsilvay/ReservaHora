@@ -8,21 +8,26 @@
 </head>
 <body>
 	<%@include file="menu.jsp"%>
-        <h2>Agregar Usuario</h2>
-        <form action="usuarios" method="post">
-	<input type="hidden" name="opcion" value="guardar">
-		<table border="1">
-			<tr>
-				<td>Nombre:</td>
-				<td><input type="text" name="name" size="50"></td>
-			</tr>
-
-			<tr>
-				<td>Password:</td>
-				<td><input type="text" name="password" size="50"></td>
-			</tr>		
-		</table>
-		<input type="submit" value="Guardar">
-	</form>
+	 <div style="width:80%; margin:auto">
+    <h2>Agregar Usuario</h2>
+ <form action="usuarios" method="post">
+ <input type="hidden" name="opcion" value="guardar">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Nombre Usuario:</label>
+      <input type="text" name="name" class="form-control" id="inputPassword4" placeholder="Nombre Usuario">
+    </div>
+     <div class="form-group col-md-6">
+    <label for="inputAddress">Password:</label>
+    <input type="password" name="password" class="form-control" id="inputAddress" placeholder="Password">
+  </div>
+  </div>
+  
+  
+  <button type="submit" value="Guardar" class="btn btn-primary">Guardar</button>
+</form>
+    
+	</div>
+       
 </body>
 </html>

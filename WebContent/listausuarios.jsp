@@ -9,22 +9,29 @@
 </head>
 <body>
 <%@include file="menu.jsp"%>
+<div style="width:80%; margin:auto">
         <h2>Lista de usuarios</h2>
-        <table border="1">
-		<tr>
-			<td>Id</td>
-			<td>Username</td>
-			<td>Password</td>
-			<td>Accion</td>
-		</tr>
-		<c:forEach var="usuario" items="${lista}">
-			<tr>
-				<td> <a href="usuarios?opcion=meditar&id=<c:out value="${ usuario.id}"></c:out>"> <c:out value="${ usuario.id}"></c:out>  </a> </td>
-				<td> <c:out value="${ usuario.nombreUsuario}"></c:out> </td>
-				<td> <c:out value="${ usuario.password}"></c:out></td>
-				<td> <a href="usuarios?opcion=eliminar&id=<c:out value="${ usuario.id}"></c:out>"> Eliminar  </a> </td>
-			</tr>
-		</c:forEach>
-	</table>
+	<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre Usuario</th>
+      <th scope="col">Password</th>
+      <th scope="col">Acción</th>
+    </tr>
+  </thead>
+  <tbody>
+  <c:forEach var="usuario" items="${lista}">
+    <tr>
+      <th scope="row"><a href="usuarios?opcion=meditar&id=<c:out value="${usuario.id}"></c:out>"><c:out value="${usuario.id}"></c:out>  </a></th>
+      <td><c:out value="${usuario.nombreUsuario}"></c:out></td>
+      <td><c:out value="${usuario.password}"></c:out></td>
+      <td><a href="usuarios?opcion=eliminar&id=<c:out value="${usuario.id}"></c:out>">Eliminar</a></td>
+    </tr>
+    </c:forEach>
+  </tbody>
+</table>
+	
+</div>	
 </body>
 </html>
